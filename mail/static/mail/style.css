@@ -1,0 +1,25 @@
+h2#top-email {
+    margin-bottom: 1.92rem;
+    margin-top: .4rem;
+    font-size: 2rem;
+}
+.menu {
+    /* border: 1px solid green; */
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+}
+
+.menu button, .menu a {
+    width: 100px;
+    padding: 4px;
+}
+
+#emails-view h3 {
+    margin-left: 32px;
+    font-family: Montserrat, sans-serif; 
+    font-weight: 500;
+}
