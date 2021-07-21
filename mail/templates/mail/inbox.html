@@ -20,16 +20,16 @@
         <h3>New Email</h3>
         <form id="compose-form">
             <div class="form-group">
-                From: <input disabled class="form-control" value="{{ request.user.email }}">
+                <label>From:</label> <input disabled class="form-control" value="{{ request.user.email }}">
             </div>
             <div class="form-group">
-                To: <input id="compose-recipients" class="form-control">
+                <label>To:</label> <input id="compose-recipients" class="form-control" placeholder="recipients">
             </div>
             <div class="form-group">
                 <input class="form-control" id="compose-subject" placeholder="Subject">
             </div>
-            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
-            <input type="submit" class="btn btn-primary"/>
+            <textarea class="form-control" id="compose-body" placeholder="Email Body"></textarea><br>
+            <input type="submit" class="btn btn-secondary" value="Submit"/>
         </form>
     </div>
 {% endblock %}
@@ -39,8 +39,6 @@
 {% endblock %}
 
 <!-- Already iniciate the styling, need to:
-
-    *style the compose email
-    *style the login
-    *style the register
+    *style the inbox, sent and archived (part of the body that appears the emails li)
+    *start managing the logics and the specification on EDX Platform
 -->
