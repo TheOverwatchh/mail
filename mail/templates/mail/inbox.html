@@ -5,32 +5,61 @@
     <h2 id="top-email">{{ request.user.email }}</h2>
 
     <div class="menu">
-        <button class="btn btn-sm btn-outline-danger" id="inbox">Inbox</button>
-        <button class="btn btn-sm btn-outline-danger" id="compose">Compose</button>
-        <button class="btn btn-sm btn-outline-danger" id="sent">Sent</button>
-        <button class="btn btn-sm btn-outline-danger" id="archived">Archived</button>
-        <a class="btn btn-sm btn-outline-danger" href="{% url 'logout' %}">Log Out</a>
+        <button class="btn btn-outline-danger" id="inbox">Inbox</button>
+        <button class="btn btn-outline-danger" id="compose">Compose</button>
+        <button class="btn btn-outline-danger" id="sent">Sent</button>
+        <button class="btn btn-outline-danger" id="archived">Archived</button>
+        <a class="btn btn-danger" href="{% url 'logout' %}">Log Out</a>
     </div>
     <hr>
 
     <div id="emails-view">
+    
     </div>
 
     <div id="compose-view">
         <h3>New Email</h3>
-        <form id="compose-form">
+        <form id="compose-form" onsubmit="send_email();return false">
             <div class="form-group">
-                <label>From:</label> <input disabled class="form-control" value="{{ request.user.email }}">
+                <label>From:</label> <input id="from" disabled class="form-control" value="{{ request.user.email }}">
             </div>
             <div class="form-group">
-                <label>To:</label> <input id="compose-recipients" class="form-control" placeholder="recipients">
+                <label>To:</label> <input required id="compose-recipients" class="form-control" placeholder="recipients">
             </div>
             <div class="form-group">
-                <input class="form-control" id="compose-subject" placeholder="Subject">
+                <input required class="form-control" id="compose-subject" placeholder="Subject">
             </div>
-            <textarea class="form-control" id="compose-body" placeholder="Email Body"></textarea><br>
-            <input type="submit" class="btn btn-secondary" value="Submit"/>
+            <textarea required class="form-control" id="compose-body" placeholder="Email Body"></textarea><br>
+            <div id="alert"></div>
+            <input type="submit" class="btn btn-secondary" value="Submit" id="btn-submit-email" />
         </form>
+    </div>
+
+    <div id="single-email-view">
+        <header class="row">
+            <div class="col-7">
+                <h3 class="d-sm-inline">Sender:</h3>
+                <span id="sender-space"></span>
+            </div>
+            <div class="col-5">
+                <small id="timestamp-space" style="float: right; font-weight:100"></small>
+            </div>
+            <div class="col-sm-12 mt-3">
+                <h4 class="d-sm-inline">recipient(s):</h4>
+                <span id="recipients-space"></span>
+            </div>     
+        </header>
+
+        <hr>
+
+       <div id="middle-area" class="text-center mb-3">
+            <h2 id="subject-space"></h2>
+       </div>
+
+        <div id="email-body">
+            <p id="body-space"></p>
+        </div>
+            <button id="replytheemail" class="btn btn-warning btn-sm form-control">Reply</button>
     </div>
 {% endblock %}
 
@@ -39,6 +68,10 @@
 {% endblock %}
 
 <!-- Already iniciate the styling, need to:
-    *style the inbox, sent and archived (part of the body that appears the emails li)
-    *start managing the logics and the specification on EDX Platform
+    *start managing the logics and the specifications on EDX Platform:
+            
+    * create the functionality to Reply email
+    * fix the responsivity in the populated li`s and in the archive button
+
+
 -->

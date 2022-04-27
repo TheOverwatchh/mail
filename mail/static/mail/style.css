@@ -4,8 +4,7 @@ h2#top-email {
     font-size: 2rem;
 }
 .menu {
-    /* border: 1px solid green; */
-    width: 50%;
+    width: 55%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -40,7 +39,108 @@ h2#top-email {
     padding: 13rem;
 }
 
-@media(max-width: 766px) {
+ul#email-display-list {
+ width: 90%;
+ margin-left: auto;
+ margin-right: auto;
+ padding: .5rem;
+}
+
+li.single-email-nonread {
+    position: relative;
+    border: 1px solid green;
+    list-style: none;
+    padding: 1rem 1rem 1rem 3rem;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    transition: all .35s;
+}
+li.single-email-read {
+    position: relative;
+    border: 1px solid green;
+    list-style: none;
+    padding: 1rem 1rem 1rem 3rem;
+    background: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    transition: all .35s;
+}
+
+li.single-email-nonread:hover {
+    background: #e8e8e8;
+    border: 1px solid #dadada;
+}
+
+li.single-email-nonread span {
+    font-family: Montserrat;
+    font-weight: 600;
+    float: left;
+    padding-right: 1vw;
+    border-right: 1px solid grey ;
+    margin-right:1vw;
+}
+
+li.single-email-read span {
+    font-family: Montserrat;
+    font-weight: 600;
+    float: left;
+    padding-right: 1vw;
+    border-right: 1px solid grey ;
+    margin-right:1vw;
+}
+
+li.single-email-nonread .timestamp {
+    float: right;
+    margin: .25rem .75rem;
+}
+
+li.single-email-read .timestamp {
+    float: right;
+    margin: .25rem .75rem;
+}
+
+li.single-email-nonread button.btn-arquive {
+    float: right;
+    transform: translateY(-.25rem);
+    font-size: 1rem;
+    padding: .25rem .75rem;
+}
+li.single-email-read button.btn-arquive {
+    float: right;
+    transform: translateY(-.25rem);  
+    font-size: 1rem;
+    padding: .25rem .75rem;
+}
+
+div#alert {
+    color: #BD1F1F;
+}
+
+div#single-email-view header {
+    width: 100%;
+    height: auto;
+    padding-bottom: .5rem;
+}
+
+div#single-email-view #email-body {
+    border-bottom: 1px dashed #ccc;
+    padding: 0 10rem 0rem 10rem;
+    min-height: 18rem;
+}
+
+@media(max-width: 520px) {
+    .menu {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+    }
+    
+    .menu button.btn , .menu a.btn  {
+        width: 120px !important;
+        padding: 2px;
+    }
     .main-login {
         padding:0rem;
         padding-top:13rem;
@@ -49,6 +149,49 @@ h2#top-email {
 
     .main-login form {
         width: 400px;
+    }
+
+    ul#email-display-list {
+        padding: 0rem;
+        padding-left: -2rem;
+        width: 110%;
+        margin-left: -5%;
+    }
+    li.single-email .timestamp {
+        position: absolute;
+        left: 35%;
+        bottom: -0.5rem;
+    }
+}
+
+@media (min-width:521px) and (max-width: 766px)  {
+    .menu {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+    }
+    
+    .menu button.btn , .menu a.btn  {
+        width: 120px !important;
+        padding: 2px;
+    }
+    .main-login {
+        padding:0rem;
+        padding-top:13rem;
+        padding-left: 3rem;
+    }
+
+    .main-login form {
+        width: 400px;
+    }
+
+    ul#email-display-list {
+        padding: 0rem;
+        width: 120%;
+        margin-left: -10%;
     }
 
 }
@@ -62,4 +205,10 @@ h2#top-email {
     .main-login form {
         width: 600px;
     }
+    ul#email-display-list {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        padding: .5rem;
+       }
 }
